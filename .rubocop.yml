@@ -1,0 +1,16 @@
+Documentation:
+  Enabled: false
+Layout/LineLength:
+  Max: 110
+AllCops:
+  TargetRubyVersion: 2.7.2
+  NewCops: enable
+  Exclude:
+    - 'spec/lib/**/*'
+    - 'spec/lib/*'
+    - 'spec/*'
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
