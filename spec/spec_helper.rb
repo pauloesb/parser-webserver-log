@@ -1,5 +1,4 @@
-require_relative "../lib/parser/analyzer"
-require_relative "../lib/parser/log_line"
+require_relative "../lib/parser/model/log_line"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
