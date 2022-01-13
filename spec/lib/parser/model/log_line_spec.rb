@@ -1,20 +1,22 @@
 require "spec_helper"
 
 RSpec.describe Parser::LogLine do
-  describe "#valid?" do
+  describe "#initialize" do
+    let(:line_number) { 0 }
+    context "when the line is valid" do
+      let(:log_line) { "/home 336.284.013.234" }
 
-    subject { described_class.new(log_line).valid? }
-
-    context "when is false" do
-      let(:log_line) { "/home 336.284.013." }
-
-      it { is_expected.to be_falsey }
+      it "does not raise exception" do
+        expect { described_class.new(line_number, log_line)}.not_to raise_error(Parser::InvalidLogLine)
+      end
     end
 
-    context "when is true" do
-      let(:log_line) { "/home 0.0.0.0" }
+    context "when the line is invalid" do
+      let(:log_line) { "/home .0.0.0" }
 
-      it { is_expected.to be_truthy }
+      it "does raise exception" do
+        expect { described_class.new(line_number, log_line) }.to raise_error(Parser::InvalidLogLine)
+      end
     end
   end
 end
