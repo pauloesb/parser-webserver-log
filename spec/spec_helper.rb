@@ -1,4 +1,5 @@
 require_relative "../lib/parser/model/log_line"
+require_relative "../lib/parser/domain/reader"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -11,3 +12,5 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+RSpec::Expectations.configuration.on_potential_false_positives = :nothing
