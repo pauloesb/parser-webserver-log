@@ -11,7 +11,7 @@ end
 
 begin
   log_file_name = ARGV[0]
-  log_file = File.open(log_file_name, "r")
+  log_file = File.new(log_file_name)
 rescue Errno::ENOENT
   warn "Unable to open file: #{log_file_name}!"
   exit 1
