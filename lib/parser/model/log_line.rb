@@ -4,23 +4,24 @@ module Parser
   class LogLine
     VALIDATOR = %r{^(/\w+)+(\s){1}(\d{1,3}\.{1}){3}(\d{1,3}){1}$}.freeze
 
-    attr_reader :line
+    attr_reader :line, :uri
 
-    def initialize(line_number, line)
+    def initialize(line, line_number = nil)
+      check_line(line)
+
       @line_number = line_number
       @line = line.chomp
-
-      check_line
+      @uri, = line.split
     end
 
     private
 
-    def valid?
+    def valid?(line)
       line.match?(VALIDATOR)
     end
 
-    def check_line
-      raise InvalidLogLine, check_line_error_message unless valid?
+    def check_line(line)
+      raise InvalidLogLine, check_line_error_message unless valid?(line)
     end
 
     def check_line_error_message
