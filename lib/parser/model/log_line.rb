@@ -22,7 +22,7 @@ module Parser
     def check_line
       raise InvalidLogLine, check_line_error_message unless valid?
     end
-    
+
     def check_line_error_message
       "The line number #{@line_number} with value '#{@line}' is invalid!\n"
     end

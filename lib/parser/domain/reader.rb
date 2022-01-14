@@ -4,7 +4,6 @@ require_relative "../model/log_line"
 
 module Parser
   class Reader
-
     def self.run(log_file)
       new(log_file).call
     end
@@ -40,4 +39,3 @@ module Parser
     end
   end
 end
-
