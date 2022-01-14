@@ -16,3 +16,5 @@ rescue Errno::ENOENT
   warn "Unable to open file: #{log_file_name}!"
   exit 1
 end
+
+Parser::Analyzer.start(log_file)
