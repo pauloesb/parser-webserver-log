@@ -1,5 +1,10 @@
 require_relative "../lib/parser/model/log_line"
+require_relative "../lib/parser/domain/view/most"
+require_relative "../lib/parser/domain/view/page"
+require_relative "../lib/parser/domain/view/unique"
 require_relative "../lib/parser/domain/reader"
+require_relative "../lib/parser/domain/domain"
+require_relative "../lib/parser/analyzer"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
