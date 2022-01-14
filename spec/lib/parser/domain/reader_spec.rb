@@ -28,7 +28,7 @@ RSpec.describe Parser::Reader do
         file.reduce([]) do |arr, line|
           begin
             line_num += 1
-            arr << Parser::LogLine.new(line_num, line)
+            arr << Parser::LogLine.new(line, line_num)
           rescue Parser::InvalidLogLine
             arr
           end

@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "domain"
 require_relative "../model/log_line"
 
 module Parser
-  class Reader
-    def self.run(log_file)
-      new(log_file).call
-    end
-
+  class Reader < Domain
     def call
       read
     end
@@ -26,7 +23,7 @@ module Parser
         @line_number += 1
 
         begin
-          arr << LogLine.new(@line_number, parsed_log_line)
+          arr << LogLine.new(parsed_log_line, @line_number)
         rescue Parser::InvalidLogLine => e
           warn "WARN - #{e.message}"
           arr
