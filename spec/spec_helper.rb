@@ -1,4 +1,9 @@
 require "simplecov"
+
+SimpleCov.start do
+  add_filter "spec"
+end
+
 require_relative "../lib/parser/models/log_line"
 require_relative "../lib/parser/domains/views/most"
 require_relative "../lib/parser/domains/views/page"
@@ -20,5 +25,3 @@ RSpec.configure do |config|
 end
 
 RSpec::Expectations.configuration.on_potential_false_positives = :nothing
-
-SimpleCov.start
