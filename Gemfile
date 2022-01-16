@@ -5,5 +5,5 @@ ruby "2.7.2"
 source "https://rubygems.org"
 
 gem "rspec"
-gem "simplecov"
 gem "rubocop", require: false
+gem "simplecov"

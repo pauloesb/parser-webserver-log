@@ -5,7 +5,6 @@ require_relative "../domain"
 module Parser
   module Views
     class Page < Domain
-
       def initialize(context)
         super(context)
 
