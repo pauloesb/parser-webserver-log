@@ -7,11 +7,11 @@ module Parser
     attr_reader :line, :uri
 
     def initialize(line, line_number = nil)
-      check_line(line)
-
       @line_number = line_number
       @line = line.chomp
       @uri, = line.split
+
+      check_line(line)
     end
 
     private
