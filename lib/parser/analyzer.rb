@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require_relative "domain/reader"
-require_relative "domain/view/most"
-require_relative "domain/view/unique"
+require_relative "domains/reader"
+require_relative "domains/views/most"
+require_relative "domains/views/unique"
 
 module Parser
   module Analyzer
     module_function
 
     def start(file)
-      Parser::Reader.run(file).tap do |log_lines|
-        Parser::View::Most.run(log_lines)
-        Parser::View::Unique.run(log_lines)
+      Parser::Reader.run(log_file: file).tap do |log_lines|
+        Parser::Views::Most.run(log_lines: log_lines)
+        Parser::Views::Unique.run(log_lines: log_lines)
       end
     end
   end
