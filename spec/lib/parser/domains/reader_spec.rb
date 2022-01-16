@@ -2,7 +2,7 @@ require "spec_helper"
 
 RSpec.describe Parser::Reader do
   describe "#run" do
-    subject { described_class.run(file) }
+    subject { described_class.run(log_file: file) }
 
     context "when parameter type is wrong" do
       let(:file) { Struct.new("Test", :a) }

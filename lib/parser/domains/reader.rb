@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "domain"
-require_relative "../model/log_line"
+require_relative "../models/log_line"
 
 module Parser
   class Reader < Domain
@@ -9,11 +9,13 @@ module Parser
       read
     end
 
-    def initialize(log_file)
-      check_log_file_instance(log_file)
+    def initialize(context)
+      super(context)
+
+      check_log_file_instance(context[:log_file])
 
       @line_number = 0
-      @log_file = log_file
+      @log_file = context[:log_file]
     end
 
     private
