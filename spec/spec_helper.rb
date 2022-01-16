@@ -1,9 +1,10 @@
-require_relative "../lib/parser/model/log_line"
-require_relative "../lib/parser/domain/view/most"
-require_relative "../lib/parser/domain/view/page"
-require_relative "../lib/parser/domain/view/unique"
-require_relative "../lib/parser/domain/reader"
-require_relative "../lib/parser/domain/domain"
+require "simplecov"
+require_relative "../lib/parser/models/log_line"
+require_relative "../lib/parser/domains/views/most"
+require_relative "../lib/parser/domains/views/page"
+require_relative "../lib/parser/domains/views/unique"
+require_relative "../lib/parser/domains/reader"
+require_relative "../lib/parser/domains/domain"
 require_relative "../lib/parser/analyzer"
 
 RSpec.configure do |config|
@@ -19,3 +20,5 @@ RSpec.configure do |config|
 end
 
 RSpec::Expectations.configuration.on_potential_false_positives = :nothing
+
+SimpleCov.start
