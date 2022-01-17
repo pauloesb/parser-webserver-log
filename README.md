@@ -24,6 +24,7 @@
 ## Architecture
 
 - File Structure
+
 ![File Structure](https://i.ibb.co/yQhDcXg/Screen-Shot-2022-01-16-at-10-36-03-PM.png "File Structure")
 
 The architecture is divided in two main parts:
