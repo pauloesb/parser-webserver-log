@@ -14,8 +14,11 @@
 
 ## Test Coverage
 - RSpec with **97.27%** coverage
+
 ![RSpec](https://i.ibb.co/Ch35Lmf/Screen-Shot-2022-01-16-at-2-25-05-PM.png "RSpec")
+
 - Rubocop without offenses
+
 ![Rubocop](https://i.ibb.co/288h1Jt/Screen-Shot-2022-01-16-at-10-43-43-PM.png "Rubocop")
 
 ## Architecture
